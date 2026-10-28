@@ -789,10 +789,11 @@ header .topbar nav.menu>a:not(.header-visit){flex:0 0 auto}
 /* ---- mobile layout corrections ---- */
 @media (max-width:850px){
   .topbar>.idn{justify-content:center!important}
-  .topbar .idn .logo{display:block!important;width:42px!important;height:42px!important;background:none!important;flex:0 0 42px}
-  .topbar .idn .logo img{display:block!important;width:42px!important;height:42px!important;object-fit:contain}
-  .topbar .brand{display:inline-flex!important;max-width:100%;font-size:clamp(18px,5.8vw,26px)!important;font-weight:700;letter-spacing:.015em!important;line-height:1!important;white-space:nowrap}
-  .topbar .brand span{white-space:nowrap}
+  .topbar .idn{width:100%;justify-content:center!important}
+  .topbar>.idn{min-width:0!important}
+  header .topbar .idn .logo{display:block!important;width:min(280px,calc(100vw - 64px))!important;height:56px!important;flex:0 0 min(280px,calc(100vw - 64px));background:url("assets/sv-developers-navigation-transparent.png") center/contain no-repeat!important;transform:translateY(-5px)}
+  .topbar .idn .logo img{display:none!important}
+  header .topbar .idn .brand{display:none!important}
 }
 @media (max-width:600px){
   html,body{overflow-x:hidden}
@@ -815,11 +816,23 @@ header .topbar nav.menu>a:not(.header-visit){flex:0 0 auto}
   .project-photo-holder>img.project-photo-logo,.project-photo-holder>img.approval-photo-logo{width:42px!important;height:32px!important;max-width:24%!important;max-height:32px!important;padding:2px!important;top:6px!important;left:6px!important;border-radius:5px!important}
   .project-photo-holder>img.approval-photo-logo{right:6px!important;left:auto!important;width:38px!important;height:30px!important;max-width:22%!important;max-height:30px!important}
   #project-nivasam #n-plan .planbtn{display:none}
+  #project-nivasam #n-plan .nplan>div{min-width:0;width:100%}
+  #project-nivasam #n-plan .specs.col{grid-template-columns:1fr;width:100%;min-width:0}
+  #project-nivasam #n-plan .specs.col .box{min-width:0;width:100%;overflow:hidden}
+  #project-nivasam #n-plan .specs.col .box span,
+  #project-nivasam #n-plan .specs.col .box small{max-width:100%;overflow-wrap:anywhere;word-break:break-word}
   .contacts{min-width:0;max-width:100%}
   .contacts a{display:block;width:100%;max-width:100%;overflow-wrap:anywhere;word-break:break-word}
   .eform{min-width:0;max-width:100%;width:100%;padding:20px}
   .eform p{max-width:100%;overflow-wrap:anywhere;word-break:break-word}
 }
+/* ---- calm photo and video playback ---- */
+.show .slide img{animation:none!important;transform:none!important}
+.show .slide,.show .slide.on{transition:opacity .55s ease,visibility 0s linear .55s}
+.show .slide.on{transition:opacity .55s ease}
+.show .slide img:hover{transform:none!important}
+.vmain video,.site-videos video,.vgrid video{transform:none!important}
+.vi:hover{transform:none}
 </style>
 </head>
 <body>
