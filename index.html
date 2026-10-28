@@ -809,7 +809,9 @@ header .topbar nav.menu>a:not(.header-visit){flex:0 0 auto}
   .stage{width:100%;aspect-ratio:4/3}
   .stage .slide img{object-fit:cover}
   .vmain video,.site-videos video{width:100%;height:auto;min-height:200px;object-fit:contain}
-  .vplayer{padding:10px}
+  .gcard,.vplayer{padding:0;border:0;background:transparent;box-shadow:none}
+  .site-videos figure{border:0;border-radius:0}
+  .site-videos video{border-radius:0}
   .project-card{display:flex;flex-direction:column;min-width:0}
   .project-card>a{order:1;width:100%;min-width:0;flex:0 0 auto}
   .project-card>.project-info{order:2;width:100%;min-width:0;flex:0 0 auto}
@@ -826,6 +828,9 @@ header .topbar nav.menu>a:not(.header-visit){flex:0 0 auto}
   .eform{min-width:0;max-width:100%;width:100%;padding:20px}
   .eform p{max-width:100%;overflow-wrap:anywhere;word-break:break-word}
 }
+@media (max-width:600px){
+  #dasara .dcontent{display:flex!important;visibility:visible!important;opacity:1!important;z-index:4}
+}
 /* ---- calm photo and video playback ---- */
 .show .slide img{animation:none!important;transform:none!important}
 .show .slide,.show .slide.on{transition:opacity .55s ease,visibility 0s linear .55s}
@@ -833,6 +838,9 @@ header .topbar nav.menu>a:not(.header-visit){flex:0 0 auto}
 .show .slide img:hover{transform:none!important}
 .vmain video,.site-videos video,.vgrid video{transform:none!important}
 .vi:hover{transform:none}
+#project-nivasam .vplayer video,
+#project-nivasam .vplayer .vi,
+#project-nivasam .vplayer .vi em{animation:none!important;transform:none!important;transition:none!important}
 </style>
 </head>
 <body>
@@ -2138,7 +2146,6 @@ function svMain(){
     pop.hidden=false;void pop.offsetWidth;pop.classList.add('show');
     clearTimeout(closeTimer);
     closeTimer=setTimeout(closeOffer,5000);
-    if(interacted){docked=true;pop.classList.add('docked')}
     pop.querySelector('.dx').focus();
     if(!rm)setTimeout(function(){
       var r=pop.getBoundingClientRect();
@@ -2165,9 +2172,6 @@ function svMain(){
     void pop.offsetWidth;
     pop.classList.add('show');
   });
-  addEventListener('scroll',dock,{passive:true});
-  addEventListener('pointerdown',dock,{passive:true});
-  addEventListener('keydown',dock);
   pop.addEventListener('animationend',function(e){
     if(e.animationName!=='dpop'||rm)return;
     var r=pop.getBoundingClientRect(),y=r.top+Math.min(30,r.height*.1);
