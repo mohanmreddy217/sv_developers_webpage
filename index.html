@@ -789,12 +789,26 @@ header .topbar nav.menu>a:not(.header-visit){flex:0 0 auto}
 /* ---- mobile layout corrections ---- */
 @media (max-width:850px){
   .topbar>.idn{justify-content:center!important}
-  .topbar .idn .logo{display:none!important}
-  .topbar .brand{display:inline-flex!important;max-width:100%;font-size:clamp(23px,7vw,32px)!important;font-weight:700;letter-spacing:.015em!important;line-height:1!important;white-space:nowrap}
+  .topbar .idn .logo{display:block!important;width:42px!important;height:42px!important;background:none!important;flex:0 0 42px}
+  .topbar .idn .logo img{display:block!important;width:42px!important;height:42px!important;object-fit:contain}
+  .topbar .brand{display:inline-flex!important;max-width:100%;font-size:clamp(18px,5.8vw,26px)!important;font-weight:700;letter-spacing:.015em!important;line-height:1!important;white-space:nowrap}
   .topbar .brand span{white-space:nowrap}
 }
 @media (max-width:600px){
   html,body{overflow-x:hidden}
+  #dasara .dcontent{top:54%;left:0;width:88%;max-width:88%;padding:0 12px 0 18px}
+  #dasara .dh{font-size:clamp(20px,6vw,25px);line-height:1.08;white-space:nowrap}
+  #dasara .dg{margin:4px 0 2px;font-size:clamp(21px,6.2vw,27px);line-height:1.08}
+  #dasara .dt{margin:0 0 9px;font-size:clamp(13px,3.8vw,16px);line-height:1.25}
+  #dasara .dbtns{width:100%;display:flex;flex-direction:column;align-items:flex-start;gap:4px}
+  #dasara .dbtns a{width:auto;max-width:100%;padding:6px 11px;font-size:12px;line-height:1.1;white-space:nowrap}
+  .phead>img,.phead>.hss,.gcard,.vplayer,.site-videos{width:100%;max-width:100%;min-width:0}
+  .phead>img,.phead>.hss{min-height:0}
+  .phead>.hss{aspect-ratio:4/3}
+  .stage{width:100%;aspect-ratio:4/3}
+  .stage .slide img{object-fit:cover}
+  .vmain video,.site-videos video{width:100%;height:auto;min-height:200px;object-fit:contain}
+  .vplayer{padding:10px}
   .project-card{display:flex;flex-direction:column;min-width:0}
   .project-card>a{order:1;width:100%;min-width:0;flex:0 0 auto}
   .project-card>.project-info{order:2;width:100%;min-width:0;flex:0 0 auto}
