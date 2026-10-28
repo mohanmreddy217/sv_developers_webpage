@@ -332,6 +332,30 @@ header.scrolled nav.menu a{padding:7px 20px;font-size:15px}
 @keyframes dfloat{50%{transform:translateY(-5px) scale(1.02)}}
 @media (max-height:620px){.dasara{padding:14px;gap:6px}.dcontent{padding-top:0}.dasara .dg,.dasara .dh{font-size:22px}.dimg{height:auto}}
 @media (prefers-reduced-motion:reduce){.dimg::before,.dimg img{animation:none}}
+/* ---- mobile header and offer bubble ---- */
+@media (max-width:850px){
+  .topbar,header.scrolled .topbar{grid-template-columns:44px minmax(0,1fr) 44px!important;grid-template-rows:64px!important;position:relative}
+  .topbar>.idn,header.scrolled .topbar>.idn{grid-column:2!important;grid-row:1!important;justify-content:center!important;justify-self:center;gap:7px;padding:0!important}
+  .topbar .idn .logo img{width:42px;height:42px}
+  .topbar .brand{font-size:clamp(17px,5vw,21px)!important;letter-spacing:-.02em}
+  .topbar>.nav-toggle{grid-column:3!important;grid-row:1!important;justify-self:end}
+  .dasara{right:auto;left:50%;bottom:calc(18px + env(safe-area-inset-bottom,0px));width:min(270px,calc(100vw - 32px));aspect-ratio:auto;min-height:0;padding:14px 16px;border-radius:22px;display:block;transform:translateX(-50%) scale(.96);box-shadow:0 12px 30px rgba(0,0,0,.28),0 0 0 4px rgba(217,178,95,.16)}
+  .dasara.show{animation:dpop-bubble .7s cubic-bezier(.2,1.2,.4,1) both}
+  .dasara .dimg,.dasara .dcoin{display:none}
+  .dcontent{display:block;padding:0}
+  .dasara .dh{font-size:19px}
+  .dasara .dg{margin:4px 0 0;font-size:19px}
+  .dasara .dt{margin:0 0 9px;font-size:12px}
+  .dasara .dbtns{gap:5px}
+  .dasara .dbtns a{font-size:11px;padding:6px 9px}
+  .dasara.docked{right:12px;left:auto;bottom:calc(14px + env(safe-area-inset-bottom,0px));width:min(205px,calc(100vw - 24px));padding:10px 12px;border-radius:18px;transform:none;animation:ddock .45s ease both}
+  .dasara.docked .dh{font-size:16px}
+  .dasara.docked .dg{font-size:16px}
+  .dasara.docked .dt{font-size:10px;margin-bottom:6px}
+  .dasara.docked .dbtns a{font-size:10px;padding:5px 7px}
+}
+@keyframes dpop-bubble{0%{opacity:0;transform:translateX(-50%) scale(.45)}70%{opacity:1;transform:translateX(-50%) scale(1.03)}100%{opacity:1;transform:translateX(-50%) scale(1)}}
+@keyframes ddock{from{opacity:.7;transform:translate(24px,24px) scale(.8)}to{opacity:1;transform:none}}
 /* ---- palette: pastel purple with neutral accents (same in light and dark mode) ---- */
 :root:root:root{--bg:#f2f8f1;--surface:#ffffff;--ink:#101711;--muted:#26362a;--line:#d2e2d1;--green:#0a4f2e;--green-ink:#ffffff;--gold:#70511d}
 body{position:relative;isolation:isolate;background:transparent}
@@ -696,7 +720,7 @@ header .topbar nav.menu .visit-arrow{width:17px;height:17px;fill:none;stroke:cur
 header .topbar nav.menu>a:not(.header-visit){flex:0 0 auto}
 @media(max-width:850px){.topbar,header.scrolled .topbar{width:100%;max-width:100%;grid-template-columns:minmax(0,1fr) auto!important;border-radius:24px}.topbar>nav.menu,header.scrolled .topbar>nav.menu{width:100%;max-width:100%;border-radius:22px}}
 /* ---- supplied SV Developers artwork in the header ---- */
-.topbar .idn .logo{width:clamp(185px,20vw,285px);height:78px;flex:0 0 auto;background:url("assets/sv-developers-navigation-transparent.png") center/contain no-repeat}
+.topbar .idn .logo{width:clamp(185px,20vw,285px);height:78px;flex:0 0 auto;background:url("/assets/sv-developers-navigation-transparent.png") center/contain no-repeat}
 .topbar .idn .logo img{display:none}
 .topbar .idn .brand{display:none!important}
 @media (min-width:851px) and (max-width:1120px){
@@ -1776,12 +1800,12 @@ function svMain(){
   var cty=document.getElementById('project-city'),nvs=document.getElementById('project-nivasam');
   var main=document.getElementById('top'),proj=document.getElementById('project'),car=document.getElementById('careers-page'),active=false;
   var projectLogoSources={
-    'siri-vanam':'assets/siri-vanam-logo.png',
-    'sri-vanam':'assets/sri-vanam-logo.png',
-    'sri-city':'assets/sri-city-logo.png',
-    'sri-nivasam':'assets/sri-nivasam-logo.png'
+    'siri-vanam':'/assets/siri-vanam-logo.png',
+    'sri-vanam':'/assets/sri-vanam-logo.png',
+    'sri-city':'/assets/sri-city-logo.png',
+    'sri-nivasam':'/assets/sri-nivasam-logo.png'
   };
-  var approvalLogoSources={hmda:'assets/hmda-logo.png',dtcp:'assets/dtcp-logo.png'};
+  var approvalLogoSources={hmda:'/assets/hmda-logo.png',dtcp:'/assets/dtcp-logo.png'};
   function addGalleryPhoto(heroId,galleryId,thumbsId,src,alt,caption){
     var hero=document.getElementById(heroId),gallery=document.getElementById(galleryId),thumbs=document.getElementById(thumbsId);
     if(!hero||!gallery||!thumbs)return;
@@ -1982,6 +2006,7 @@ function svMain(){
 (function(){
   var pop=document.getElementById('dasara'),cv=document.getElementById('fx'),ctx=cv.getContext('2d');
   var rm=matchMedia('(prefers-reduced-motion:reduce)').matches,ps=[],run=false,W,H;
+  var docked=false,interacted=false;
   function size(){var d=Math.min(devicePixelRatio||1,2);W=innerWidth;H=innerHeight;cv.width=W*d;cv.height=H*d;ctx.setTransform(d,0,0,d,0,0)}
   size();addEventListener('resize',size);
   var cols=['#f6e3a1','#d9b25f','#ffb347','#ff7043','#7fc79a','#ffffff','#ffd54f','#ff44b8','#65d8ff','#a5ff6a','#b189ff'];
@@ -2008,6 +2033,7 @@ function svMain(){
   }
   function begin(){
     pop.hidden=false;void pop.offsetWidth;pop.classList.add('show');
+    if(interacted){docked=true;pop.classList.add('docked')}
     pop.querySelector('.dx').focus();
     if(!rm)setTimeout(function(){
       var r=pop.getBoundingClientRect();
@@ -2017,6 +2043,15 @@ function svMain(){
       setTimeout(function(){burst(innerWidth*point[0],innerHeight*point[1],56,5.2)},i*260);
     });
   }
+  function dock(){
+    if(docked)return;
+    if(pop.hidden){interacted=true;return}
+    docked=true;
+    pop.classList.add('docked');
+  }
+  addEventListener('scroll',dock,{passive:true});
+  addEventListener('pointerdown',dock,{passive:true});
+  addEventListener('keydown',dock);
   pop.addEventListener('animationend',function(e){
     if(e.animationName!=='dpop'||rm)return;
     var r=pop.getBoundingClientRect(),y=r.top+Math.min(30,r.height*.1);
