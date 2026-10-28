@@ -786,6 +786,26 @@ header .topbar nav.menu>a:not(.header-visit){flex:0 0 auto}
   #dasara .dcoin{top:11px;right:38px;width:40px;height:40px}
   #dasara .dx{top:9px;right:9px;width:27px;height:27px;font-size:18px}
 }
+/* ---- mobile layout corrections ---- */
+@media (max-width:850px){
+  .topbar>.idn{justify-content:center!important}
+  .topbar .idn .logo{display:none!important}
+  .topbar .brand{display:inline-flex!important;max-width:100%;font-size:clamp(23px,7vw,32px)!important;font-weight:700;letter-spacing:.015em!important;line-height:1!important;white-space:nowrap}
+  .topbar .brand span{white-space:nowrap}
+}
+@media (max-width:600px){
+  html,body{overflow-x:hidden}
+  .project-card{display:flex;flex-direction:column;min-width:0}
+  .project-card>a{order:1;width:100%;min-width:0;flex:0 0 auto}
+  .project-card>.project-info{order:2;width:100%;min-width:0;flex:0 0 auto}
+  .project-photo-holder>img.project-photo-logo,.project-photo-holder>img.approval-photo-logo{width:42px!important;height:32px!important;max-width:24%!important;max-height:32px!important;padding:2px!important;top:6px!important;left:6px!important;border-radius:5px!important}
+  .project-photo-holder>img.approval-photo-logo{right:6px!important;left:auto!important;width:38px!important;height:30px!important;max-width:22%!important;max-height:30px!important}
+  #project-nivasam #n-plan .planbtn{display:none}
+  .contacts{min-width:0;max-width:100%}
+  .contacts a{display:block;width:100%;max-width:100%;overflow-wrap:anywhere;word-break:break-word}
+  .eform{min-width:0;max-width:100%;width:100%;padding:20px}
+  .eform p{max-width:100%;overflow-wrap:anywhere;word-break:break-word}
+}
 </style>
 </head>
 <body>
