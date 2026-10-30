@@ -1094,7 +1094,7 @@ h1{margin:44px 0 0;font-size:clamp(38px,8.4vw,108px);line-height:1;letter-spacin
           <p>Whether you are looking for a residential plot, a farm villa plot, a premium villa plot, or an apartment, our team is here to help you explore your options.</p>
           <div class="story-closing">
             <p><strong>Your property journey begins with trust.</strong></p>
-            <p>Contact SV Developers to learn more about our projects or schedule a site visit.</p>
+            <p>Contact SV Developers to schedule a site visit.</p>
             <a class="btn" href="https://forms.gle/voNhsHVfXTx7yNnv6" target="_blank" rel="noopener">Book a site visit</a>
           </div>
         </article>
@@ -1381,8 +1381,8 @@ h1{margin:44px 0 0;font-size:clamp(38px,8.4vw,108px);line-height:1;letter-spacin
     <section class="psec" id="v-videos">
       <h2>Siri Vanam videos</h2>
       <div class="site-videos">
-        <figure><video controls playsinline preload="metadata" src="assets/siri-vanam/VID-20261026-WA0031.mp4" aria-label="Siri Vanam video 1"></video><figcaption>Siri Vanam site video 1 &middot; <a href="assets/siri-vanam/VID-20261026-WA0031.mp4" download>Download video</a></figcaption></figure>
-        <figure><video controls playsinline preload="metadata" src="assets/siri-vanam/VID-20261026-WA0032.mp4" aria-label="Siri Vanam video 2"></video><figcaption>Siri Vanam site video 2 &middot; <a href="assets/siri-vanam/VID-20261026-WA0032.mp4" download>Download video</a></figcaption></figure>
+        <figure><video controls muted playsinline preload="metadata" src="assets/siri-vanam/VID-20261026-WA0031.mp4" aria-label="Siri Vanam video 1"></video><figcaption>Siri Vanam site video 1 &middot; <a href="assets/siri-vanam/VID-20261026-WA0031.mp4" download>Download video</a></figcaption></figure>
+        <figure><video controls muted playsinline preload="metadata" src="assets/siri-vanam/VID-20261026-WA0032.mp4" aria-label="Siri Vanam video 2"></video><figcaption>Siri Vanam site video 2 &middot; <a href="assets/siri-vanam/VID-20261026-WA0032.mp4" download>Download video</a></figcaption></figure>
       </div>
     </section>
 
@@ -1610,7 +1610,7 @@ h1{margin:44px 0 0;font-size:clamp(38px,8.4vw,108px);line-height:1;letter-spacin
       <h3 class="subh">Videos</h3>
       <div class="vplayer" id="nvid">
         <div class="vmain">
-          <video controls playsinline preload="metadata" aria-label="Sri Nivasam site video"></video>
+          <video controls muted playsinline preload="metadata" aria-label="Sri Nivasam site video"></video>
           <div class="vnow" id="vnow">1 / 6</div>
         <div class="vcap"><b id="vtitle">Main avenue and entrance arch</b><span id="vdesc">Wide roads with a landscaped median, leading up to the entrance arch.</span></div>
         </div>
@@ -2377,6 +2377,9 @@ function svMain(){
   });
   setTimeout(function(){map.invalidateSize()},250);
 })();
+</script>
+<script>
+document.querySelectorAll('video').forEach(function(v){ v.muted = true; });
 </script>
 </body>
 </html>
