@@ -18,7 +18,7 @@ fbq('track', 'PageView');
 
 <noscript>
 <img height="1" width="1" style="display:none"
-src="https://www.facebook.com/tr?id=1620594486208915&ev=PageView&noscript=1"
+src="https://www.facebook.com/tr?id=1620594486208915&ev=PageView&noscript=1 "
 />
 </noscript>
 <!-- End Meta Pixel Code -->
@@ -862,6 +862,15 @@ header .topbar nav.menu>a:not(.header-visit){flex:0 0 auto}
 #project-nivasam .vplayer video,
 #project-nivasam .vplayer .vi,
 #project-nivasam .vplayer .vi em{animation:none!important;transform:none!important;transition:none!important}
+/* ---- floating WhatsApp button (shown on every page) ---- */
+.wa-float{position:fixed;left:18px;bottom:calc(18px + env(safe-area-inset-bottom,0px));z-index:1550;display:flex;align-items:center;gap:10px;height:56px;padding:0 22px 0 16px;border-radius:99px;background:#128a4a;color:#fff;font-weight:700;font-size:16px;line-height:1;text-decoration:none;box-shadow:0 10px 26px rgba(0,0,0,.3);transition:transform .2s ease,box-shadow .2s ease,background .2s ease,bottom .35s ease}
+.wa-float svg{width:30px;height:30px;fill:#fff;flex:none}
+.wa-float:hover{background:#0f7840;transform:translateY(-3px);box-shadow:0 16px 34px rgba(0,0,0,.34)}
+.wa-float:focus-visible{outline:3px solid #f6e3a1;outline-offset:3px}
+.wa-float::before{content:"";position:absolute;inset:0;border-radius:inherit;box-shadow:0 0 0 0 rgba(18,138,74,.6);animation:wapulse 2.6s ease-out infinite;pointer-events:none}
+@keyframes wapulse{to{box-shadow:0 0 0 20px rgba(18,138,74,0)}}
+@media (prefers-reduced-motion:reduce){.wa-float::before{animation:none}.wa-float{transition:none}}
+@media (max-width:600px){.wa-float{left:14px;width:56px;padding:0;justify-content:center}.wa-float span{display:none}}
 </style>
 </head>
 <body>
@@ -1281,7 +1290,7 @@ h1{margin:44px 0 0;font-size:clamp(38px,8.4vw,108px);line-height:1;letter-spacin
         <div>
           <h2>Book a visit to SV Apartment</h2>
           <p class="lead">Fill in our short form and we will call back with directions, current availability and project details.</p>
-          <p class="contacts"><a href="tel:7799774169">7799774169</a><a href="https://wa.me/917799774169?text=Hi%20SV%20Developers%2C%20I%20would%20like%20to%20know%20more%20about%20SV%20Apartment." target="_blank" rel="noopener">Chat on WhatsApp</a><a href="mailto:svdevelopersofficial@gmail.com">svdevelopersofficial@gmail.com</a></p>
+          <p class="contacts"><a href="tel:7799774169">7799774169</a><a href="https://wa.me/917816077189?text=menu" target="_blank" rel="noopener">Chat on WhatsApp</a><a href="mailto:svdevelopersofficial@gmail.com">svdevelopersofficial@gmail.com</a></p>
         </div>
         <div class="eform ebtn"><p>Fill in our short Google Form and we will call you back.</p><a class="btn" href="https://forms.gle/voNhsHVfXTx7yNnv6" target="_blank" rel="noopener">Book a site visit</a></div>
       </div>
@@ -1415,7 +1424,7 @@ h1{margin:44px 0 0;font-size:clamp(38px,8.4vw,108px);line-height:1;letter-spacin
         <div>
           <h2>Book a visit to Siri Vanam</h2>
           <p class="lead">Fill in our short form and we will call back with directions, current availability and project details.</p>
-          <p class="contacts"><a href="tel:7799774169">7799774169</a><a href="https://wa.me/917799774169?text=Hi%20SV%20Developers%2C%20I%20would%20like%20to%20know%20more%20about%20Siri%20Vanam." target="_blank" rel="noopener">Chat on WhatsApp</a><a href="mailto:svdevelopersofficial@gmail.com">svdevelopersofficial@gmail.com</a></p>
+          <p class="contacts"><a href="tel:7799774169">7799774169</a><a href="https://wa.me/917816077189?text=menu" target="_blank" rel="noopener">Chat on WhatsApp</a><a href="mailto:svdevelopersofficial@gmail.com">svdevelopersofficial@gmail.com</a></p>
         </div>
         <div class="eform ebtn"><p>Fill in our short Google Form and we will call you back.</p><a class="btn" href="https://forms.gle/voNhsHVfXTx7yNnv6" target="_blank" rel="noopener">Book a site visit</a></div>
       </div>
@@ -1520,7 +1529,7 @@ h1{margin:44px 0 0;font-size:clamp(38px,8.4vw,108px);line-height:1;letter-spacin
         <div>
           <h2>Book a visit to Sri City</h2>
           <p class="lead">Fill in our short form and we will call back with directions, current availability and project details.</p>
-          <p class="contacts"><a href="tel:7799774169">7799774169</a><a href="https://wa.me/917799774169?text=Hi%20SV%20Developers%2C%20I%20would%20like%20to%20know%20more%20about%20Sri%20City." target="_blank" rel="noopener">Chat on WhatsApp</a><a href="mailto:svdevelopersofficial@gmail.com">svdevelopersofficial@gmail.com</a></p>
+          <p class="contacts"><a href="tel:7799774169">7799774169</a><a href="https://wa.me/917816077189?text=menu" target="_blank" rel="noopener">Chat on WhatsApp</a><a href="mailto:svdevelopersofficial@gmail.com">svdevelopersofficial@gmail.com</a></p>
         </div>
         <div class="eform ebtn"><p>Fill in our short Google Form and we will call you back.</p><a class="btn" href="https://forms.gle/voNhsHVfXTx7yNnv6" target="_blank" rel="noopener">Book a site visit</a></div>
       </div>
@@ -1648,7 +1657,7 @@ h1{margin:44px 0 0;font-size:clamp(38px,8.4vw,108px);line-height:1;letter-spacin
         <div>
           <h2>Book a visit to Sri Nivasam</h2>
           <p class="lead">Fill in our short form and we will call back with directions, current availability and project details.</p>
-          <p class="contacts"><a href="tel:7799774169">7799774169</a><a href="https://wa.me/917799774169?text=Hi%20SV%20Developers%2C%20I%20would%20like%20to%20know%20more%20about%20Sri%20Nivasam." target="_blank" rel="noopener">Chat on WhatsApp</a><a href="mailto:svdevelopersofficial@gmail.com">svdevelopersofficial@gmail.com</a></p>
+          <p class="contacts"><a href="tel:7799774169">7799774169</a><a href="https://wa.me/917816077189?text=menu" target="_blank" rel="noopener">Chat on WhatsApp</a><a href="mailto:svdevelopersofficial@gmail.com">svdevelopersofficial@gmail.com</a></p>
         </div>
         <div class="eform ebtn"><p>Fill in our short Google Form and we will call you back.</p><a class="btn" href="https://forms.gle/voNhsHVfXTx7yNnv6" target="_blank" rel="noopener">Book a site visit</a></div>
       </div>
@@ -1719,6 +1728,7 @@ h1{margin:44px 0 0;font-size:clamp(38px,8.4vw,108px);line-height:1;letter-spacin
         <p style="margin:8px 0">Savvys Tulip Cheruku Plaza, 4th Floor, New Samathapuri Colony, Nagole Junction, Kothapet, Hyderabad - 500035</p>
         <a href="tel:7799774169">7799774169</a>
         <a href="mailto:svdevelopersofficial@gmail.com">svdevelopersofficial@gmail.com</a>
+        <a href="https://wa.me/917816077189?text=menu" target="_blank" rel="noopener">Chat with us on WhatsApp</a>
       </div>
       <div><h4>Explore</h4><a href="#story">About us</a><a href="#projects">All projects</a><a href="#">Blog</a><a href="#/careers">Careers</a><a href="#contact">Contact</a></div>
       <div><h4>Projects</h4><a href="#/sri-nivasam">Sri Nivasam</a><a href="#/sri-city">Sri City</a><a href="#/sri-vanam">Sri Vanam</a><a href="#/siri-vanam">Siri Vanam</a><a href="#/sv-apartment">SV Apartment</a></div>
@@ -1726,6 +1736,7 @@ h1{margin:44px 0 0;font-size:clamp(38px,8.4vw,108px);line-height:1;letter-spacin
     <p class="legal">&copy; 2026 SV Developers. All rights reserved. Images, plans, dimensions and timelines on this site are indicative and subject to approval by the competent authority. Nothing here constitutes an offer or a contract.</p>
   </div>
 </footer>
+<a class="wa-float" id="waFloat" href="https://wa.me/917816077189?text=menu" target="_blank" rel="noopener" aria-label="Chat with us on WhatsApp"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 11.8a8.5 8.5 0 0 1-12.6 7.4L3 20.5l1.4-4.7a8.5 8.5 0 1 1 16.1-4Zm-8.5-7a7 7 0 0 0-6 10.6l.2.4-.8 2.5 2.6-.7.4.2a7 7 0 1 0 3.6-13Zm3.9 10.1c-.2-.1-1.2-.6-1.4-.7-.2-.1-.3-.1-.5.1l-.6.7c-.1.2-.3.2-.5.1a5.7 5.7 0 0 1-2.8-2.4c-.2-.3.2-.4.6-1.1.1-.2 0-.3 0-.4l-.6-1.4c-.2-.4-.3-.4-.5-.4h-.4c-.2 0-.4.1-.6.3-.2.2-.8.8-.8 1.8s.8 2.1.9 2.2a7 7 0 0 0 2.8 2.5c1.7.7 2.4.8 3.2.6.5-.1 1.2-.5 1.4-1 .2-.5.2-.9.1-1-.1-.1-.3-.2-.5-.3Z"/></svg><span>Chat with us</span></a>
 <script>
 function svMain(){
   var rm=matchMedia('(prefers-reduced-motion:reduce)').matches;
@@ -2404,6 +2415,21 @@ function svMain(){
 </script>
 <script>
 document.querySelectorAll('video').forEach(function(v){ v.muted = true; });
+</script>
+<script>
+(function(){
+  var fab=document.getElementById('waFloat'),pop=document.getElementById('dasara');
+  if(!fab||!pop)return;
+  function place(){
+    fab.style.bottom='';
+    if(pop.hidden||!pop.offsetHeight)return;
+    var a=fab.getBoundingClientRect(),b=pop.getBoundingClientRect();
+    if(a.right>b.left&&a.left<b.right&&a.bottom>b.top&&a.top<b.bottom){fab.style.bottom=(innerHeight-b.top+12)+'px'}
+  }
+  function later(){place();setTimeout(place,500);setTimeout(place,1300)}
+  new MutationObserver(later).observe(pop,{attributes:true,attributeFilter:['class','hidden']});
+  addEventListener('resize',later);later();
+})();
 </script>
 </body>
 </html>
